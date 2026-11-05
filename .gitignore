@@ -3,3 +3,7 @@ dist
 coverage
 *.local
 .DS_Store
+
+# macOS metadata on external drives
+._*
+.vscode/

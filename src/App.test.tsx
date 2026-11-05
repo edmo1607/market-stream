@@ -31,7 +31,7 @@ beforeAll(() => {
   window.requestAnimationFrame = (cb) => setTimeout(() => cb(0), 0) as unknown as number;
 });
 
-it('renders the stream and turns a book click into an order', async () => {
+it('renders the stream and turns a boƒok click into an order', async () => {
   const user = userEvent.setup();
   const live = testFeed();
   render(
@@ -63,7 +63,7 @@ it('renders the stream and turns a book click into an order', async () => {
   ]);
 
   const book = await screen.findByRole('table', { name: /asks/i });
-  expect(within(book).getByText('Spread 1.00 (0.00%)')).toBeInTheDocument();
+  expect(within(book).getByText('Spread 1.00 (0.00%) · Mid 68,000.50')).toBeInTheDocument();
   expect(document.querySelector('.status')).toHaveTextContent('Live');
 
   await user.click(screen.getByRole('button', { name: 'Use price 68,000.00' }));

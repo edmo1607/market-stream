@@ -8,6 +8,7 @@ const GROUPINGS: Record<string, number[]> = {
   'BTC/USD': [0, 1, 10, 50],
   'ETH/USD': [0, 0.1, 1, 5],
   'SOL/USD': [0, 0.01, 0.1, 0.5],
+  'LTC/USD': [0, 0.01, 0.1, 0.5],
 };
 
 /**
@@ -97,6 +98,7 @@ export function OrderBook({ onPick }: { onPick: (price: number) => void }) {
                 {view.spread != null
                   ? `${fmtPrice(view.spread)} (${fmtPct(view.spreadPct ?? 0).replace('+', '')})`
                   : '—'}
+                {view.mid != null && ` · Mid ${fmtPrice(view.mid)}`}
               </td>
             </tr>
           </tbody>

@@ -40,10 +40,12 @@ export function buildSide(
         : price;
     buckets.set(bucket, (buckets.get(bucket) ?? 0) + qty);
   }
+  //sorts the bids from highest to lowest price and the asks from lowest to highest
   const sorted = [...buckets.entries()].sort((a, b) =>
     side === 'bid' ? b[0] - a[0] : a[0] - b[0],
   );
   let total = 0;
+  //sum qty of total and bars lenght
   return sorted.slice(0, rows).map(([price, qty]) => ({ price, qty, total: (total += qty) }));
 }
 

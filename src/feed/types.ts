@@ -58,6 +58,6 @@ export interface Feed {
 
 export type FeedFactory = (handlers: FeedHandlers) => Feed;
 
-export const SYMBOLS = ['BTC/USD', 'ETH/USD', 'SOL/USD'] as const;
+export const SYMBOLS = ['BTC/USD', 'SOL/USD', 'LTC/USD'] as const;
 export type MarketSymbol = (typeof SYMBOLS)[number];
 export const BOOK_DEPTH = 25;

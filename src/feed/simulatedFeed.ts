@@ -7,7 +7,12 @@ import {
   type Trade,
 } from './types';
 
-const START: Record<string, number> = { 'BTC/USD': 68_000, 'ETH/USD': 3_500, 'SOL/USD': 160 };
+const START: Record<string, number> = {
+  'BTC/USD': 68_000,
+  'ETH/USD': 3_500,
+  'SOL/USD': 160,
+  'LTC/USD': 90,
+};
 
 /**
  * Offline market simulator: a random-walk mid price with a realistic book and trades,
